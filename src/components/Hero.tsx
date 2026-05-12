@@ -23,11 +23,11 @@ export default function Hero() {
         className="absolute inset-0 z-0 overflow-hidden"
       >
         <div 
-          className="w-full h-full bg-cover bg-center select-none opacity-[0.35] md:opacity-[0.2]"
+          className="w-full h-full bg-cover bg-center select-none opacity-[0.45] md:opacity-[0.25] filter brightness-[0.95] contrast-[1.05]"
           style={{ backgroundImage: `url(${heroBg})` }}
         />
         {/* Soft gradient overlay for elegant integration */}
-        <div className="absolute inset-0 bg-gradient-to-t from-off-white via-off-white/70 to-transparent md:bg-gradient-to-r md:from-off-white md:via-off-white/80 md:to-off-white/30 pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-t from-off-white via-off-white/60 to-black/5 md:bg-gradient-to-r md:from-off-white md:via-off-white/70 md:to-black/5 pointer-events-none" />
       </motion.div>
 
       {/* Typography focused Hero */}
@@ -58,7 +58,7 @@ export default function Hero() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1], delay: 0.6 }}
-                className="block -ml-1 md:-ml-2 mt-3 md:mt-2 drop-shadow-sm md:drop-shadow-none"
+                className="block ml-2 md:-ml-2 mt-3 md:mt-2 drop-shadow-sm md:drop-shadow-none"
               >
                 experience.
               </motion.span>
@@ -70,7 +70,7 @@ export default function Hero() {
               transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1], delay: 0.8 }}
               className="text-[12px] md:text-[13px] leading-[2.2] text-charcoal/70 mt-8 mb-4 ml-[5vw] md:ml-[60px] lg:ml-[100px] tracking-[0.1em] whitespace-pre-wrap"
             >
-              想いや空気感を丁寧にすくい取り、{"\n"}ブランドの輪郭を整える。
+              想いや空気感を丁寧にすくい取り{"\n"}ブランドの輪郭を整える
             </motion.p>
             
             <motion.div 
