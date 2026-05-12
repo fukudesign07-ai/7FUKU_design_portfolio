@@ -2,6 +2,15 @@ import { motion } from 'motion/react';
 import { ArrowUpRight } from 'lucide-react';
 
 export default function Contact() {
+  const fadeUpVariant = {
+    hidden: { opacity: 0, y: 30 },
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      transition: { duration: 1.0, ease: [0.22, 1, 0.36, 1] }
+    }
+  };
+
   return (
     <section id="contact" className="bg-off-white text-charcoal py-48 md:py-64 flex flex-col relative overflow-hidden border-t border-charcoal/5">
       
@@ -14,7 +23,7 @@ export default function Contact() {
           <div className="text-[9px] md:text-[10px] font-sans uppercase tracking-[0.4em] mb-12 md:mb-16 opacity-50 ml-[5vw] md:ml-[10%]">Contact</div>
           <h2 className="font-serif font-light tracking-tighter leading-[0.8] lg:leading-[0.9] mb-8 md:mb-12 flex flex-col">
             <motion.span 
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 1.0, ease: [0.22, 1, 0.36, 1] }}
@@ -23,7 +32,7 @@ export default function Contact() {
               Say
             </motion.span>
             <motion.span 
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 1.0, ease: [0.22, 1, 0.36, 1], delay: 0.15 }}
@@ -33,18 +42,30 @@ export default function Contact() {
             </motion.span>
           </h2>
           
-          <p className="font-sans text-[11px] md:text-[13px] text-charcoal/60 mb-2 md:mb-12 leading-[2.5] max-w-sm md:max-w-md ml-[6vw] md:ml-[10%] tracking-wide whitespace-pre-wrap">
+          <motion.p 
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-50px" }}
+            variants={fadeUpVariant}
+            className="font-sans text-[11px] md:text-[13px] text-charcoal/60 mb-2 md:mb-12 leading-[2.5] max-w-sm md:max-w-md ml-[6vw] md:ml-[10%] tracking-wide whitespace-pre-wrap"
+          >
             お仕事のご相談は、
 メールまたはInstagram DMより
 お気軽にご連絡ください。
-          </p>
-
+          </motion.p>
+          
           <div className="hidden lg:flex text-[9px] leading-[2] opacity-50 uppercase tracking-[0.3em] font-sans mt-24 flex-col gap-1">
             <span>© {new Date().getFullYear()} 7FUKU design. All rights reserved.</span>
           </div>
         </div>
 
-        <div className="w-full lg:w-auto flex flex-col lg:flex-row gap-8 md:gap-12 lg:gap-24 font-sans ml-[5vw] md:ml-[10vw] lg:ml-auto md:pr-12 lg:pb-32 lg:mt-0">
+        <motion.div 
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-50px" }}
+          variants={fadeUpVariant}
+          className="w-full lg:w-auto flex flex-col lg:flex-row gap-8 md:gap-12 lg:gap-24 font-sans ml-[5vw] md:ml-[10vw] lg:ml-auto md:pr-12 lg:pb-32 lg:mt-0"
+        >
           <div className="flex flex-col items-start lg:items-end gap-1">
             <span className="text-[9px] uppercase tracking-[0.3em] font-medium text-charcoal/40 mb-3 md:mb-4">Email</span>
             <a href="mailto:fukudesign.07@gmail.com" className="text-[11px] md:text-sm border-b border-charcoal/20 pb-1 hover:border-charcoal transition-colors tracking-widest text-charcoal/80 hover:text-charcoal flex items-center gap-1 xl:whitespace-nowrap break-all sm:break-normal">
@@ -57,7 +78,7 @@ export default function Contact() {
               Instagram <ArrowUpRight className="w-3 h-3 opacity-50" />
             </a>
           </div>
-        </div>
+        </motion.div>
 
         <div className="lg:hidden flex w-full text-[9px] leading-[2] opacity-50 uppercase tracking-[0.3em] font-sans ml-[5vw] md:ml-[10vw] mt-16 flex-col gap-1">
           <span>© {new Date().getFullYear()} 7FUKU design. All rights reserved.</span>

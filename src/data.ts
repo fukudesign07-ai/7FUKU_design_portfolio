@@ -20,6 +20,15 @@
 // 11. soundmaster.jpg (Sound Master ヘッドホン)
 // ==========================================
 
+import imgMiyamotoPipe from './assets/images/miyamoto_pipe_main.jpg';
+import imgMiyamotoCard from './assets/images/miyamoto_business_card.jpg';
+import imgJourneyPoster from './assets/images/journey_poster_main.jpg';
+import imgCoreCard from './assets/images/core_business_card_main.jpg';
+import imgAmberPackage from './assets/images/amber_package_main.jpg';
+import imgBaledDark from './assets/images/baled_dark_mockup_main.jpg';
+import imgBaledHallway from './assets/images/baled_hallway.jpg';
+import imgBaledOffice from './assets/images/baled_office_mockup.jpg';
+
 export type Work = {
   id: string;
   title: string;
@@ -37,8 +46,8 @@ export const works: Work[] = [
     title: "MIYAMOTO KOGYO",
     category: "Branding / Logo Design",
     description: "給排水設備の無骨さと、\n洗練された印象を両立したブランドビジュアルを設計。\n\n配管の質感や陰影を活かし、\n設備工事会社としての “信頼感” と\n“プロフェッショナル性” を表現しました。",
-    imageMain: "/miyamoto_pipe_main.jpg?v=2",
-    imageSub: "/miyamoto_business_card.jpg?v=2",
+    imageMain: imgMiyamotoPipe,
+    imageSub: imgMiyamotoCard,
     color: "#2B2B2B"
   },
   {
@@ -46,7 +55,7 @@ export const works: Work[] = [
     title: "JOURNEY.",
     category: "Art Direction / Poster",
     description: "やわらかな光と空気感を大切に、\n“人生を共に奏でる” という世界観をポスターとして表現。\n\n映画のワンシーンのような静けさと、\n温度感のあるビジュアルを目指しました。",
-    imageMain: "/journey_poster_main.jpg?v=2",
+    imageMain: imgJourneyPoster,
     color: "#A28458"
   },
   {
@@ -54,7 +63,7 @@ export const works: Work[] = [
     title: "CORE",
     category: "Business Card Design",
     description: "「とにかくカッコイイ名刺をつくりたい」\nという想いから生まれたデザイン。\n\n厚みのある特殊紙と箔押し加工を用い、\n手に取った瞬間に印象に残る存在感を追求しました。",
-    imageMain: "/core_business_card_main.jpg?v=2",
+    imageMain: imgCoreCard,
     color: "#1E2A3A"
   },
   {
@@ -62,7 +71,7 @@ export const works: Work[] = [
     title: "ARASHIYAMA AMBER",
     category: "Package Design",
     description: "温かみのあるアンバーカラーを基調に、\nクラフト感と上品さが共存するパッケージを制作。\n\n風景写真を取り入れることで、\n“土地の空気感” まで伝わる世界観を意識しました。",
-    imageMain: "/amber_package_main.jpg?v=2",
+    imageMain: imgAmberPackage,
     color: "#D05A32"
   },
   {
@@ -70,9 +79,9 @@ export const works: Work[] = [
     title: "bAled Systems",
     category: "Brand Identity",
     description: "“空間を整え、体験へと昇華する” をテーマに、\nリゾート・不動産事業を見据えたブランドロゴを制作。\n\n静けさと高級感を軸に、\n空間そのものの価値が伝わるビジュアルを設計しました。",
-    imageMain: "/baled_dark_mockup_main.jpg?v=2",
-    imageSub: "/baled_hallway.jpg?v=2",
-    imageExtra: "/baled_office_mockup.jpg?v=2",
+    imageMain: imgBaledDark,
+    imageSub: imgBaledHallway,
+    imageExtra: imgBaledOffice,
     color: "#1A1A1A"
   }
 ];

@@ -2,6 +2,10 @@ import { motion, useScroll, useTransform } from 'motion/react';
 import { useRef } from 'react';
 import { works, Work } from '../data';
 
+import imgRefrigerator from '../assets/images/refrigerator_ad.jpg';
+import imgSoratowa from '../assets/images/soratowa_ad.jpg';
+import imgSoundmaster from '../assets/images/soundmaster_ad.jpg';
+
 function WorkItem({ work, index }: { work: Work, index: number }) {
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({
@@ -15,7 +19,7 @@ function WorkItem({ work, index }: { work: Work, index: number }) {
   const extraImageY = useTransform(scrollYProgress, [0, 1], ["15px", "-15px"]);
 
   const fadeUpVariant = {
-    hidden: { opacity: 0, y: 20 },
+    hidden: { opacity: 0, y: 30 },
     visible: { 
       opacity: 1, 
       y: 0,
@@ -238,7 +242,7 @@ export default function Works() {
   const extraImageY = useTransform(scrollYProgress, [0, 1], ["15px", "-15px"]);
 
   const fadeUpVariant = {
-    hidden: { opacity: 0, y: 20 },
+    hidden: { opacity: 0, y: 30 },
     visible: { 
       opacity: 1, 
       y: 0,
@@ -249,9 +253,15 @@ export default function Works() {
   return (
     <section id="works" className="bg-off-white py-12 md:py-40 lg:py-48 relative z-20 overflow-hidden">
       <div className="max-w-[100rem] mx-auto px-6 md:px-12 mb-12 md:mb-40 flex justify-start md:justify-center w-full">
-        <h2 className="font-serif text-xl md:text-4xl lg:text-5xl tracking-[0.3em] md:tracking-[0.5em] font-light italic text-charcoal uppercase opacity-40 md:opacity-60">
+        <motion.h2 
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-50px" }}
+          variants={fadeUpVariant}
+          className="font-serif text-xl md:text-4xl lg:text-5xl tracking-[0.3em] md:tracking-[0.5em] font-light italic text-charcoal uppercase opacity-40 md:opacity-60"
+        >
           Selected<br className="md:hidden" /> Works
-        </h2>
+        </motion.h2>
       </div>
       
       <div className="flex flex-col">
@@ -262,7 +272,13 @@ export default function Works() {
       
       {/* 06 Selected Graphic Works */}
       <div className="w-full max-w-[100rem] mx-auto px-6 md:px-12 mt-20 lg:mt-64 relative z-10">
-        <div className="mb-12 lg:mb-32 flex flex-col lg:flex-row justify-start items-start lg:items-end gap-6 lg:gap-24">
+        <motion.div 
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-50px" }}
+          variants={fadeUpVariant}
+          className="mb-12 lg:mb-32 flex flex-col lg:flex-row justify-start items-start lg:items-end gap-6 lg:gap-24"
+        >
           <div className="flex flex-col">
             <div className="text-[9px] md:text-[10px] font-sans uppercase tracking-[0.3em] font-medium text-charcoal mb-4 opacity-60">
               <span className="opacity-50 mr-2 md:inline hidden">PROJ.</span>06 <span className="mx-2 md:mx-4 opacity-30">/</span> Graphic Advertisement / Visual Design
@@ -278,7 +294,7 @@ export default function Works() {
 配色・構図・余白を設計しながら、
 それぞれの世界観に合わせた広告表現を制作しています。
           </p>
-        </div>
+        </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 relative">
           
@@ -290,7 +306,7 @@ export default function Works() {
                 whileInView="visible"
                 viewport={{ once: true, margin: "-50px" }}
                 variants={fadeUpVariant}
-                src="/refrigerator_ad.jpg?v=2" 
+                src={imgRefrigerator} 
                 alt="ICHI techs Refrigerator Ad"
                 className="w-full h-auto object-contain filter brightness-[0.98] transition-transform duration-[1.2s] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.01]"
               />
@@ -305,7 +321,7 @@ export default function Works() {
                 whileInView="visible"
                 viewport={{ once: true, margin: "-50px" }}
                 variants={fadeUpVariant}
-                src="/soratowa_ad.jpg?v=2" 
+                src={imgSoratowa} 
                 alt="Soratowa Tea Ad"
                 className="w-full h-auto object-contain filter brightness-[0.98] transition-transform duration-[1.2s] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.01]"
               />
@@ -317,7 +333,7 @@ export default function Works() {
                 whileInView="visible"
                 viewport={{ once: true, margin: "-50px" }}
                 variants={fadeUpVariant}
-                src="/soundmaster_ad.jpg?v=2" 
+                src={imgSoundmaster} 
                 alt="SoundMaster Headphones Ad"
                 className="w-full h-auto object-contain filter brightness-[0.98] transition-transform duration-[1.2s] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.01]"
               />

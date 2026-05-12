@@ -1,6 +1,8 @@
 import { motion, useScroll, useTransform } from 'motion/react';
 import { useRef } from 'react';
 
+import heroBg from '../assets/images/hero_editorial_bg.jpg';
+
 export default function Hero() {
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({
@@ -22,7 +24,7 @@ export default function Hero() {
       >
         <div 
           className="w-full h-full bg-cover bg-center select-none opacity-[0.35] md:opacity-[0.2]"
-          style={{ backgroundImage: 'url("/hero_editorial_bg.jpg?v=2")' }}
+          style={{ backgroundImage: `url(${heroBg})` }}
         />
         {/* Soft gradient overlay for elegant integration */}
         <div className="absolute inset-0 bg-gradient-to-t from-off-white via-off-white/70 to-transparent md:bg-gradient-to-r md:from-off-white md:via-off-white/80 md:to-off-white/30 pointer-events-none" />
@@ -34,22 +36,38 @@ export default function Hero() {
         {/* Text Content */}
         <div className="z-20 max-w-4xl relative mt-8 sm:mt-24 lg:mt-0">
           
-          <div className="z-10 relative left-0 md:left-4">
-            <motion.h2 
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1], delay: 0.5 }}
-              className="font-serif text-[12vw] sm:text-6xl lg:text-[80px] xl:text-[96px] tracking-tighter leading-[0.9] text-charcoal flex flex-col font-light"
-            >
-              <span className="block -ml-1 md:-ml-2 drop-shadow-sm md:drop-shadow-none">A quiet</span>
-              <span className="block ml-[12vw] md:ml-[60px] lg:ml-[80px] italic text-charcoal/90 md:text-charcoal/80 relative z-20 mt-2 drop-shadow-sm md:drop-shadow-none">visual</span>
-              <span className="block -ml-1 md:-ml-2 mt-3 md:mt-2 drop-shadow-sm md:drop-shadow-none">experience.</span>
-            </motion.h2>
+          <div className="z-10 relative -left-[4vw] md:left-4">
+            <h2 className="font-serif text-[12vw] sm:text-6xl lg:text-[80px] xl:text-[96px] tracking-tighter leading-[0.9] text-charcoal flex flex-col font-light">
+              <motion.span 
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
+                className="block -ml-1 md:-ml-2 drop-shadow-sm md:drop-shadow-none"
+              >
+                A quiet
+              </motion.span>
+              <motion.span 
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1], delay: 0.4 }}
+                className="block ml-[12vw] md:ml-[60px] lg:ml-[80px] italic text-charcoal/90 md:text-charcoal/80 relative z-20 mt-2 drop-shadow-sm md:drop-shadow-none"
+              >
+                visual
+              </motion.span>
+              <motion.span 
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1], delay: 0.6 }}
+                className="block -ml-1 md:-ml-2 mt-3 md:mt-2 drop-shadow-sm md:drop-shadow-none"
+              >
+                experience.
+              </motion.span>
+            </h2>
             
             <motion.p
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1], delay: 0.7 }}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1], delay: 0.8 }}
               className="text-[12px] md:text-[13px] leading-[2.2] text-charcoal/70 mt-8 mb-4 ml-[5vw] md:ml-[60px] lg:ml-[100px] tracking-[0.1em] whitespace-pre-wrap"
             >
               想いや空気感を丁寧にすくい取り、{"\n"}ブランドの輪郭を整える。
@@ -58,14 +76,14 @@ export default function Hero() {
             <motion.div 
               initial={{ scaleX: 0 }}
               animate={{ scaleX: 1 }}
-              transition={{ duration: 1, ease: [0.16, 1, 0.3, 1], delay: 0.8 }}
+              transition={{ duration: 1, ease: [0.16, 1, 0.3, 1], delay: 1.0 }}
               className="h-[1px] bg-charcoal/20 w-16 md:w-24 mt-8 md:mt-16 mb-8 origin-left ml-[5vw] md:ml-[60px] lg:ml-[100px]"
             />
             
             <motion.div 
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 1.5, delay: 1 }}
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1], delay: 1.2 }}
               className="flex flex-col gap-2.5 ml-[5vw] md:ml-[60px] lg:ml-[100px] font-sans pt-2 md:pt-0"
             >
               <span className="text-[9px] md:text-[10px] uppercase tracking-[0.3em] font-medium text-charcoal">Airi Fukumoto</span>

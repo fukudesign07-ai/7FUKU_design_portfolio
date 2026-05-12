@@ -11,7 +11,7 @@ export default function About() {
   const y = useTransform(scrollYProgress, [0, 1], ["1%", "-1%"]);
 
   const fadeUpVariant = {
-    hidden: { opacity: 0, y: 20 },
+    hidden: { opacity: 0, y: 30 },
     visible: { 
       opacity: 1, 
       y: 0,
@@ -67,7 +67,7 @@ Instagram運用を中心に
           </motion.div>
 
           <motion.div 
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-50px" }}
             transition={{ duration: 1.0, ease: [0.22, 1, 0.36, 1], delay: 0.1 }}
