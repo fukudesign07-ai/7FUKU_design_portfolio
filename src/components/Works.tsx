@@ -251,8 +251,8 @@ export default function Works() {
   };
 
   return (
-    <section id="works" className="bg-off-white pt-28 pb-12 md:pt-[200px] md:pb-40 lg:pt-[230px] lg:pb-48 relative z-20 overflow-hidden">
-      <div className="max-w-[100rem] mx-auto px-6 md:px-12 mb-12 md:mb-40 flex justify-start md:justify-center w-full">
+    <section id="works" className="bg-off-white pt-28 pb-12 md:pt-[200px] md:pb-40 lg:pt-[280px] lg:pb-48 relative z-20 overflow-hidden">
+      <div className="max-w-[100rem] mx-auto px-6 md:px-12 mb-12 md:mb-40 flex justify-center w-full text-center">
         <motion.h2 
           initial="hidden"
           whileInView="visible"
