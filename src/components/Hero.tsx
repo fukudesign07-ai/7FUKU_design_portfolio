@@ -20,10 +20,10 @@ export default function Hero() {
       {/* Editorial Atmospheric Background */}
       <motion.div 
         style={{ y: backgroundY }}
-        className="absolute inset-0 z-0 overflow-hidden"
+        className="absolute inset-0 z-0 overflow-hidden max-md:!transform-none"
       >
         <div 
-          className="w-full h-full bg-cover bg-center bg-no-repeat select-none opacity-[0.11] md:opacity-[0.16] filter brightness-[1.05] contrast-[0.95]"
+          className="w-full h-full bg-cover bg-center bg-no-repeat bg-scroll select-none opacity-[0.11] md:opacity-[0.16] filter brightness-[1.05] contrast-[0.95]"
           style={{ backgroundImage: `url(${heroBg})` }}
         />
         {/* Soft gradient overlay for elegant integration */}
@@ -33,7 +33,7 @@ export default function Hero() {
       </motion.div>
 
       {/* Typography focused Hero */}
-      <main className="relative flex-1 flex flex-col justify-center items-center md:items-start text-center md:text-left md:px-12 w-full max-w-[1600px] mx-auto z-10 px-6 pt-12 md:pt-0" style={{ transform: textY, opacity }}>
+      <motion.main className="relative flex-1 flex flex-col justify-center items-center md:items-start text-center md:text-left md:px-12 w-full max-w-[1600px] mx-auto z-10 px-6 pt-12 md:pt-0" style={{ y: textY, opacity }}>
         
         {/* Text Content */}
         <div className="z-20 max-w-4xl relative mt-8 sm:mt-24 lg:mt-0">
@@ -95,7 +95,7 @@ export default function Hero() {
         </div>
 
         
-      </main>
+      </motion.main>
 
       {/* Global Scroll Indicator */}
       <motion.div 
