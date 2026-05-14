@@ -1,12 +1,12 @@
 import { motion, useScroll, useTransform } from 'motion/react';
-import { useRef } from 'react';
+import React, { useRef } from 'react';
 import { works, Work } from '../data';
 
-import imgRefrigerator from '../assets/images/refrigerator_ad.jpg';
-import imgSoratowa from '../assets/images/soratowa_ad.jpg';
-import imgSoundmaster from '../assets/images/soundmaster_ad.jpg';
+const imgRefrigerator = "/images/refrigerator_ad.jpg";
+const imgSoratowa = "/images/soratowa_tea.jpg";
+const imgSoundmaster = "/images/soundmaster_ad.jpg";
 
-function WorkItem({ work, index }: { work: Work, index: number }) {
+function WorkItem({ work, index }: { work: Work, index: number, key?: React.Key }) {
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -50,7 +50,7 @@ function WorkItem({ work, index }: { work: Work, index: number }) {
              <motion.img 
               initial="hidden"
               whileInView="visible"
-              viewport={{ once: true, margin: "-50px" }}
+              viewport={{ once: true, margin: "100px" }}
               variants={fadeUpVariant}
               src={work.imageMain} 
               alt={work.title}
@@ -65,7 +65,7 @@ function WorkItem({ work, index }: { work: Work, index: number }) {
             <motion.div
               initial="hidden"
               whileInView="visible"
-              viewport={{ once: true, margin: "-50px" }}
+              viewport={{ once: true, margin: "100px" }}
               variants={fadeUpVariant}
             >
               <ProjectText />
@@ -79,7 +79,7 @@ function WorkItem({ work, index }: { work: Work, index: number }) {
                 <motion.img 
                   initial="hidden"
                   whileInView="visible"
-                  viewport={{ once: true, margin: "-50px" }}
+                  viewport={{ once: true, margin: "100px" }}
                   variants={fadeUpVariant}
                   src={work.imageSub} alt={`${work.title} detail`} className="w-full h-auto object-contain" />
               </motion.div>
@@ -102,7 +102,7 @@ function WorkItem({ work, index }: { work: Work, index: number }) {
             <motion.div
               initial="hidden"
               whileInView="visible"
-              viewport={{ once: true, margin: "-50px" }}
+              viewport={{ once: true, margin: "100px" }}
               variants={fadeUpVariant}
             >
               <ProjectText align="center" />
@@ -112,7 +112,7 @@ function WorkItem({ work, index }: { work: Work, index: number }) {
              <motion.img 
               initial="hidden"
               whileInView="visible"
-              viewport={{ once: true, margin: "-50px" }}
+              viewport={{ once: true, margin: "100px" }}
               variants={fadeUpVariant}
               src={work.imageMain} 
               alt={work.title}
@@ -132,7 +132,7 @@ function WorkItem({ work, index }: { work: Work, index: number }) {
             <motion.div
               initial="hidden"
               whileInView="visible"
-              viewport={{ once: true, margin: "-50px" }}
+              viewport={{ once: true, margin: "100px" }}
               variants={fadeUpVariant}
             >
                <ProjectText />
@@ -142,7 +142,7 @@ function WorkItem({ work, index }: { work: Work, index: number }) {
                <motion.img 
                  initial="hidden"
                  whileInView="visible"
-                 viewport={{ once: true, margin: "-50px" }}
+                 viewport={{ once: true, margin: "100px" }}
                  variants={fadeUpVariant}
                  src={work.imageMain} alt={work.title} className="w-full h-auto object-contain transition-transform duration-[1.2s] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.01]" />
           </motion.div>
@@ -158,7 +158,7 @@ function WorkItem({ work, index }: { work: Work, index: number }) {
           <motion.img 
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, margin: "-50px" }}
+            viewport={{ once: true, margin: "100px" }}
             variants={fadeUpVariant}
             src={work.imageMain} 
             alt={work.title}
@@ -173,7 +173,7 @@ function WorkItem({ work, index }: { work: Work, index: number }) {
           <motion.div
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, margin: "-50px" }}
+            viewport={{ once: true, margin: "100px" }}
             variants={fadeUpVariant}
           >
             <ProjectText align="center" />
@@ -195,7 +195,7 @@ function WorkItem({ work, index }: { work: Work, index: number }) {
             <motion.div
               initial="hidden"
               whileInView="visible"
-              viewport={{ once: true, margin: "-50px" }}
+              viewport={{ once: true, margin: "100px" }}
               variants={fadeUpVariant}
             >
               <ProjectText />
@@ -206,20 +206,20 @@ function WorkItem({ work, index }: { work: Work, index: number }) {
             
             {/* Main Visual - Cover */}
             <motion.div style={{ y: imageY }} className="w-full relative industrial-shadow group overflow-hidden md:w-[90%] lg:w-[95%] lg:self-end lg:-mr-4">
-               <motion.img initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-50px" }} variants={fadeUpVariant} src={work.imageMain} className="w-full h-auto object-contain transition-transform duration-[1.2s] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.01]" alt={work.title} />
+               <motion.img initial="hidden" whileInView="visible" viewport={{ once: true, margin: "100px" }} variants={fadeUpVariant} src={work.imageMain} className="w-full h-auto object-contain transition-transform duration-[1.2s] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.01]" alt={work.title} />
             </motion.div>
             
             {/* Sub Visual */}
             {work.imageSub && (
               <motion.div style={{ y: subImageY }} className="w-[85%] md:w-[70%] lg:w-[75%] industrial-shadow relative flex justify-center mt-0 lg:mt-4 mr-auto lg:mr-auto lg:ml-0 z-20 overflow-hidden">
-                   <motion.img initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-50px" }} variants={fadeUpVariant} src={work.imageSub} alt={`${work.title} detail`} className="w-full h-auto object-contain transition-transform duration-[1.2s] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.01]" />
+                   <motion.img initial="hidden" whileInView="visible" viewport={{ once: true, margin: "100px" }} variants={fadeUpVariant} src={work.imageSub} alt={`${work.title} detail`} className="w-full h-auto object-contain transition-transform duration-[1.2s] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.01]" />
               </motion.div>
             )}
 
             {/* Extra Visual - Cover */}
             {work.imageExtra && (
               <motion.div style={{ y: extraImageY }} className="w-[95%] md:w-[80%] lg:w-[80%] relative industrial-shadow ml-auto lg:ml-auto lg:mr-16 z-30 mt-0 lg:mt-4 group overflow-hidden">
-                 <motion.img initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-50px" }} variants={fadeUpVariant} src={work.imageExtra} className="w-full h-auto object-contain transition-transform duration-[1.2s] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.01]" alt={`${work.title} extra environment`} />
+                 <motion.img initial="hidden" whileInView="visible" viewport={{ once: true, margin: "100px" }} variants={fadeUpVariant} src={work.imageExtra} className="w-full h-auto object-contain transition-transform duration-[1.2s] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.01]" alt={`${work.title} extra environment`} />
               </motion.div>
             )}
             
@@ -256,7 +256,7 @@ export default function Works() {
         <motion.h2 
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, margin: "-50px" }}
+          viewport={{ once: true, margin: "100px" }}
           variants={fadeUpVariant}
           className="font-serif text-xl md:text-4xl lg:text-5xl tracking-[0.3em] md:tracking-[0.5em] font-light italic text-charcoal uppercase opacity-40 md:opacity-60"
         >
@@ -275,7 +275,7 @@ export default function Works() {
         <motion.div 
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, margin: "-50px" }}
+          viewport={{ once: true, margin: "100px" }}
           variants={fadeUpVariant}
           className="mb-12 lg:mb-32 flex flex-col lg:flex-row justify-start items-start lg:items-end gap-6 lg:gap-24"
         >
@@ -304,7 +304,7 @@ export default function Works() {
               <motion.img 
                 initial="hidden"
                 whileInView="visible"
-                viewport={{ once: true, margin: "-50px" }}
+                viewport={{ once: true, margin: "100px" }}
                 variants={fadeUpVariant}
                 src={imgRefrigerator} 
                 alt="ICHI techs Refrigerator Ad"
@@ -319,7 +319,7 @@ export default function Works() {
               <motion.img 
                 initial="hidden"
                 whileInView="visible"
-                viewport={{ once: true, margin: "-50px" }}
+                viewport={{ once: true, margin: "100px" }}
                 variants={fadeUpVariant}
                 src={imgSoratowa} 
                 alt="Soratowa Tea Ad"
@@ -331,7 +331,7 @@ export default function Works() {
               <motion.img 
                 initial="hidden"
                 whileInView="visible"
-                viewport={{ once: true, margin: "-50px" }}
+                viewport={{ once: true, margin: "100px" }}
                 variants={fadeUpVariant}
                 src={imgSoundmaster} 
                 alt="SoundMaster Headphones Ad"

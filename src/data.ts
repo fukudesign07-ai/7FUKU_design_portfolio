@@ -1,33 +1,11 @@
-// ==========================================
-// 🎨 画像の差し替えについて (Image Replacement)
-// ==========================================
-// チャットで共有いただいた素晴らしいポートフォリオ画像を反映するため、
-// 画像のファイル名を整理し、デザインに合わせて各セクションの解説文も詳細にアップデートしました。
-// 
-// 実際の画像をプレビューに反映させるには：
-// 左のファイルエクスプローラーから `public` フォルダを作成し、以下の名前で画像をアップロードしてください：
-// 
-// 1. miyamoto-logo.jpg (宮本工業のパイプ背景ロゴ)
-// 2. miyamoto-card.jpg (宮本工業の名刺)
-// 3. journey-poster.jpg (Journey. 映画ポスター)
-// 4. core-card.jpg (CORE 谷口様の名刺)
-// 5. arashiyama-beer.jpg (ARASHIYAMA AMBER ビール)
-// 6. baled-logo.jpg (bAled systems メタルロゴ)
-// 7. baled-corridor.jpg (bAled ホテル廊下)
-// 8. baled-office.jpg (bAled オフィス受付)
-// 9. ichi-fridge.jpg (ICHI techs 冷蔵庫)
-// 10. soratowa-tea.jpg (空と和 茶畑)
-// 11. soundmaster.jpg (Sound Master ヘッドホン)
-// ==========================================
-
-import imgMiyamotoPipe from './assets/images/miyamoto_pipe_main.jpg';
-import imgMiyamotoCard from './assets/images/miyamoto_business_card.jpg';
-import imgJourneyPoster from './assets/images/journey_poster_main.jpg';
-import imgCoreCard from './assets/images/core_business_card_main.jpg';
-import imgAmberPackage from './assets/images/amber_package_main.jpg';
-import imgBaledDark from './assets/images/baled_dark_mockup_main.jpg';
-import imgBaledHallway from './assets/images/baled_hallway.jpg';
-import imgBaledOffice from './assets/images/baled_office_mockup.jpg';
+const imgMiyamotoPipe = "/images/miyamoto_pipe_main.jpg";
+const imgMiyamotoCard = "/images/miyamoto_business_card.jpg";
+const imgJourneyPoster = "/images/journey_poster_main.jpg";
+const imgCoreCard = "/images/core_business_card_main.jpg";
+const imgAmberPackage = "/images/amber_package_main.jpg";
+const imgBaledDark = "/images/baled_dark_mockup_main.jpg";
+const imgBaledHallway = "/images/baled_hallway.jpg";
+const imgBaledOffice = "/images/baled_office_mockup.jpg";
 
 export type Work = {
   id: string;

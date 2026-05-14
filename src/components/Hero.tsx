@@ -1,7 +1,7 @@
 import { motion, useScroll, useTransform } from 'motion/react';
 import { useRef } from 'react';
 
-import heroBg from '../assets/images/hero_editorial_bg.jpg';
+const heroBg = "/images/hero_editorial_bg.jpg";
 
 export default function Hero() {
   const ref = useRef(null);
