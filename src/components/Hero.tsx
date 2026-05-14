@@ -23,11 +23,13 @@ export default function Hero() {
         className="absolute inset-0 z-0 overflow-hidden"
       >
         <div 
-          className="w-full h-full bg-cover bg-center select-none opacity-[0.45] md:opacity-[0.25] filter brightness-[0.95] contrast-[1.05]"
+          className="w-full h-full bg-cover bg-center bg-no-repeat select-none opacity-[0.11] md:opacity-[0.16] filter brightness-[1.05] contrast-[0.95]"
           style={{ backgroundImage: `url(${heroBg})` }}
         />
         {/* Soft gradient overlay for elegant integration */}
         <div className="absolute inset-0 bg-gradient-to-t from-off-white via-off-white/60 to-black/5 md:bg-gradient-to-r md:from-off-white md:via-off-white/70 md:to-black/5 pointer-events-none" />
+        {/* Soft warm overlay for mobile */}
+        <div className="absolute inset-0 bg-[#d2beab]/20 mix-blend-multiply md:hidden pointer-events-none" />
       </motion.div>
 
       {/* Typography focused Hero */}
