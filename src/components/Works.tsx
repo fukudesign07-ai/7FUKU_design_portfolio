@@ -43,19 +43,23 @@ function WorkItem({ work, index }: { work: Work, index: number, key?: React.Key 
 
   if (work.id === "01") {
     return (
-      <div ref={ref} className="py-16 md:py-32 lg:py-48 w-full flex flex-col relative group border-b border-charcoal/5">
+      <div ref={ref} className="py-16 md:py-32 lg:py-48 w-full flex flex-col relative group">
         <div className="w-full max-w-[1600px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-0 px-6 lg:px-0">
           
-          <motion.div style={{ y: imageY }} className="lg:col-span-8 relative industrial-shadow overflow-hidden md:w-[90%] md:mx-auto lg:w-full bg-off-white">
-             <motion.img 
+          <motion.div style={{ y: imageY }} className="lg:col-span-8 relative md:w-[90%] md:mx-auto lg:w-full">
+            <motion.div
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, margin: "100px" }}
               variants={fadeUpVariant}
-              src={work.imageMain} 
-              alt={work.title}
-              className="block bg-off-white w-full h-auto object-contain select-none"
-            />
+              className="w-full relative industrial-shadow overflow-hidden group"
+            >
+              <img 
+                src={work.imageMain} 
+                alt={work.title}
+                className="block w-full h-auto object-contain select-none"
+              />
+            </motion.div>
           </motion.div>
 
           <motion.div 
@@ -74,14 +78,17 @@ function WorkItem({ work, index }: { work: Work, index: number, key?: React.Key 
             {work.imageSub && (
               <motion.div 
                 style={{ y: subImageY }}
-                className="w-full mt-12 md:mt-16 lg:mt-72 relative industrial-shadow ml-0 md:w-[70%] lg:w-[95%] lg:-ml-24 overflow-hidden bg-off-white"
+                className="w-full mt-12 md:mt-16 lg:mt-72 relative ml-0 md:w-[70%] lg:w-[95%] lg:-ml-24"
               >
-                <motion.img 
+                <motion.div
                   initial="hidden"
                   whileInView="visible"
                   viewport={{ once: true, margin: "100px" }}
                   variants={fadeUpVariant}
-                  src={work.imageSub} alt={`${work.title} detail`} className="block bg-off-white w-full h-auto object-contain" />
+                  className="w-full relative industrial-shadow overflow-hidden"
+                >
+                  <img src={work.imageSub} alt={`${work.title} detail`} className="block w-full h-auto object-contain" />
+                </motion.div>
               </motion.div>
             )}
           </motion.div>
@@ -93,7 +100,7 @@ function WorkItem({ work, index }: { work: Work, index: number, key?: React.Key 
 
   if (work.id === "02") {
     return (
-      <div ref={ref} className="py-20 md:py-40 lg:py-72 w-full flex flex-col relative group border-b border-charcoal/5">
+      <div ref={ref} className="py-20 md:py-40 lg:py-72 w-full flex flex-col relative group">
         <div className="flex flex-col items-center justify-center w-full max-w-[1400px] mx-auto relative px-6 md:px-12">
           <motion.div 
             style={{ y: textY }}
@@ -108,16 +115,20 @@ function WorkItem({ work, index }: { work: Work, index: number, key?: React.Key 
               <ProjectText align="center" />
             </motion.div>
           </motion.div>
-          <motion.div style={{ y: imageY }} className="w-[90%] md:w-[75%] lg:w-[45%] max-w-[800px] relative industrial-shadow overflow-hidden lg:ml-[15%] bg-off-white">
-             <motion.img 
+          <motion.div style={{ y: imageY }} className="w-[90%] md:w-[75%] lg:w-[45%] max-w-[800px] relative lg:ml-[15%] group">
+            <motion.div
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, margin: "100px" }}
               variants={fadeUpVariant}
-              src={work.imageMain} 
-              alt={work.title}
-              className="block bg-off-white w-full h-auto object-contain select-none filter transition-transform duration-[1.2s] ease-[cubic-bezier(0.22,1,0.36,1)] md:group-hover:scale-[1.01]"
-            />
+              className="w-full relative industrial-shadow overflow-hidden"
+            >
+              <img 
+                src={work.imageMain} 
+                alt={work.title}
+                className="block w-full h-auto object-contain select-none filter transition-transform duration-[1.2s] ease-[cubic-bezier(0.22,1,0.36,1)] md:group-hover:scale-[1.01]"
+              />
+            </motion.div>
           </motion.div>
         </div>
       </div>
@@ -126,7 +137,7 @@ function WorkItem({ work, index }: { work: Work, index: number, key?: React.Key 
 
   if (work.id === "03") {
     return (
-      <div ref={ref} className="py-16 md:py-32 lg:py-64 w-full flex flex-col items-start relative group border-b border-charcoal/5 px-6 md:px-12 !lg:px-12 max-w-[1600px] mx-auto">
+      <div ref={ref} className="py-16 md:py-32 lg:py-64 w-full flex flex-col items-start relative group px-6 md:px-12 !lg:px-12 max-w-[1600px] mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-24 w-full items-center">
           <motion.div style={{ y: textY }} className="lg:col-span-5 lg:col-start-1 mt-0 z-20 md:mb-12 lg:mb-0">
             <motion.div
@@ -138,13 +149,16 @@ function WorkItem({ work, index }: { work: Work, index: number, key?: React.Key 
                <ProjectText />
             </motion.div>
           </motion.div>
-          <motion.div style={{ y: imageY }} className="lg:col-span-7 lg:col-start-6 relative industrial-shadow w-full group overflow-hidden md:w-[90%] md:mx-auto lg:w-full bg-off-white">
-               <motion.img 
-                 initial="hidden"
-                 whileInView="visible"
-                 viewport={{ once: true, margin: "100px" }}
-                 variants={fadeUpVariant}
-                 src={work.imageMain} alt={work.title} className="block bg-off-white w-full h-auto object-contain transition-transform duration-[1.2s] ease-[cubic-bezier(0.22,1,0.36,1)] md:group-hover:scale-[1.01]" />
+          <motion.div style={{ y: imageY }} className="lg:col-span-7 lg:col-start-6 relative w-full group md:w-[90%] md:mx-auto lg:w-full">
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "100px" }}
+              variants={fadeUpVariant}
+              className="w-full relative industrial-shadow overflow-hidden"
+            >
+               <img src={work.imageMain} alt={work.title} className="block w-full h-auto object-contain transition-transform duration-[1.2s] ease-[cubic-bezier(0.22,1,0.36,1)] md:group-hover:scale-[1.01]" />
+            </motion.div>
           </motion.div>
         </div>
       </div>
@@ -153,18 +167,22 @@ function WorkItem({ work, index }: { work: Work, index: number, key?: React.Key 
 
   if (work.id === "04") {
     return (
-      <div ref={ref} className="py-20 md:py-48 lg:py-56 w-full flex flex-col relative group border-b border-charcoal/5 px-6 md:px-12 max-w-[1800px] mx-auto">
-        <motion.div style={{ y: imageY }} className="relative w-full mx-auto industrial-shadow-lg overflow-hidden group bg-off-white">
-          <motion.img 
+      <div ref={ref} className="py-20 md:py-48 lg:py-56 w-full flex flex-col relative group px-6 md:px-12 max-w-[1800px] mx-auto">
+        <motion.div style={{ y: imageY }} className="relative w-full mx-auto group">
+          <motion.div
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "100px" }}
             variants={fadeUpVariant}
-            src={work.imageMain} 
-            alt={work.title}
-            className="block bg-off-white w-full h-auto object-contain select-none transition-transform duration-[1.2s] ease-[cubic-bezier(0.22,1,0.36,1)] md:group-hover:scale-[1.01] origin-center"
-          />
-          <div className="absolute inset-0 bg-black/5 transition-colors duration-700 md:group-hover:bg-transparent pointer-events-none" />
+            className="w-full relative industrial-shadow-lg overflow-hidden"
+          >
+            <img 
+              src={work.imageMain} 
+              alt={work.title}
+              className="block w-full h-auto object-contain select-none transition-transform duration-[1.2s] ease-[cubic-bezier(0.22,1,0.36,1)] md:group-hover:scale-[1.01] origin-center"
+            />
+            <div className="absolute inset-0 bg-black/5 transition-colors duration-700 md:group-hover:bg-transparent pointer-events-none" />
+          </motion.div>
         </motion.div>
         <motion.div 
           style={{ y: textY }}
@@ -185,7 +203,7 @@ function WorkItem({ work, index }: { work: Work, index: number, key?: React.Key 
 
   if (work.id === "05") {
     return (
-      <div ref={ref} className="py-16 md:py-32 lg:py-56 w-full flex flex-col relative group border-b border-charcoal/5 px-6 md:px-12 max-w-[1600px] mx-auto">
+      <div ref={ref} className="py-16 md:py-32 lg:py-56 w-full flex flex-col relative group px-6 md:px-12 max-w-[1600px] mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-24 items-start">
           
           <motion.div 
@@ -205,21 +223,45 @@ function WorkItem({ work, index }: { work: Work, index: number, key?: React.Key 
           <div className="lg:col-span-8 lg:order-2 flex flex-col w-full z-10 gap-12 md:gap-20 lg:gap-16 pb-8 lg:pb-16 mt-8 lg:mt-0 items-center lg:items-start">
             
             {/* Main Visual - Cover */}
-            <motion.div style={{ y: imageY }} className="w-full relative industrial-shadow group overflow-hidden md:w-[90%] lg:w-[95%] lg:self-end lg:-mr-4 bg-off-white">
-               <motion.img initial="hidden" whileInView="visible" viewport={{ once: true, margin: "100px" }} variants={fadeUpVariant} src={work.imageMain} className="block bg-off-white w-full h-auto object-contain transition-transform duration-[1.2s] ease-[cubic-bezier(0.22,1,0.36,1)] md:group-hover:scale-[1.01]" alt={work.title} />
+            <motion.div style={{ y: imageY }} className="w-full relative group md:w-[90%] lg:w-[95%] lg:self-end lg:-mr-4">
+              <motion.div
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, margin: "100px" }}
+                variants={fadeUpVariant}
+                className="w-full relative industrial-shadow overflow-hidden"
+              >
+                 <img src={work.imageMain} className="block w-full h-auto object-contain transition-transform duration-[1.2s] ease-[cubic-bezier(0.22,1,0.36,1)] md:group-hover:scale-[1.01]" alt={work.title} />
+              </motion.div>
             </motion.div>
             
             {/* Sub Visual */}
             {work.imageSub && (
-              <motion.div style={{ y: subImageY }} className="w-[85%] md:w-[70%] lg:w-[75%] industrial-shadow relative flex justify-center mt-0 lg:mt-4 mr-auto lg:mr-auto lg:ml-0 z-20 overflow-hidden bg-off-white">
-                   <motion.img initial="hidden" whileInView="visible" viewport={{ once: true, margin: "100px" }} variants={fadeUpVariant} src={work.imageSub} alt={`${work.title} detail`} className="block bg-off-white w-full h-auto object-contain transition-transform duration-[1.2s] ease-[cubic-bezier(0.22,1,0.36,1)] md:group-hover:scale-[1.01]" />
+              <motion.div style={{ y: subImageY }} className="w-[85%] md:w-[70%] lg:w-[75%] relative flex justify-center mt-0 lg:mt-4 mr-auto lg:mr-auto lg:ml-0 z-20 group">
+                <motion.div
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true, margin: "100px" }}
+                  variants={fadeUpVariant}
+                  className="w-full relative industrial-shadow overflow-hidden"
+                >
+                     <img src={work.imageSub} alt={`${work.title} detail`} className="block w-full h-auto object-contain transition-transform duration-[1.2s] ease-[cubic-bezier(0.22,1,0.36,1)] md:group-hover:scale-[1.01]" />
+                </motion.div>
               </motion.div>
             )}
 
             {/* Extra Visual - Cover */}
             {work.imageExtra && (
-              <motion.div style={{ y: extraImageY }} className="w-[95%] md:w-[80%] lg:w-[80%] relative industrial-shadow ml-auto lg:ml-auto lg:mr-16 z-30 mt-0 lg:mt-4 group overflow-hidden bg-off-white">
-                 <motion.img initial="hidden" whileInView="visible" viewport={{ once: true, margin: "100px" }} variants={fadeUpVariant} src={work.imageExtra} className="block bg-off-white w-full h-auto object-contain transition-transform duration-[1.2s] ease-[cubic-bezier(0.22,1,0.36,1)] md:group-hover:scale-[1.01]" alt={`${work.title} extra environment`} />
+              <motion.div style={{ y: extraImageY }} className="w-[95%] md:w-[80%] lg:w-[80%] relative ml-auto lg:ml-auto lg:mr-16 z-30 mt-0 lg:mt-4 group">
+                <motion.div
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true, margin: "100px" }}
+                  variants={fadeUpVariant}
+                  className="w-full relative industrial-shadow overflow-hidden"
+                >
+                   <img src={work.imageExtra} className="block w-full h-auto object-contain transition-transform duration-[1.2s] ease-[cubic-bezier(0.22,1,0.36,1)] md:group-hover:scale-[1.01]" alt={`${work.title} extra environment`} />
+                </motion.div>
               </motion.div>
             )}
             
@@ -300,43 +342,55 @@ export default function Works() {
           
           {/* Main vertical poster */}
           <div className="lg:col-span-5 flex flex-col relative w-full group items-center lg:items-start md:w-[85%] md:mx-auto lg:w-full">
-            <motion.div style={{ y: imageY }} className="w-full industrial-shadow relative overflow-hidden bg-off-white">
-              <motion.img 
+            <motion.div style={{ y: imageY }} className="w-full relative group">
+              <motion.div
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true, margin: "100px" }}
                 variants={fadeUpVariant}
-                src={imgRefrigerator} 
-                alt="ICHI techs Refrigerator Ad"
-                className="block bg-off-white w-full h-auto object-contain filter brightness-[0.98] transition-transform duration-[1.2s] ease-[cubic-bezier(0.22,1,0.36,1)] md:group-hover:scale-[1.01]"
-              />
+                className="w-full relative industrial-shadow overflow-hidden"
+              >
+                <img 
+                  src={imgRefrigerator} 
+                  alt="ICHI techs Refrigerator Ad"
+                  className="block w-full h-auto object-contain filter brightness-[0.98] transition-transform duration-[1.2s] ease-[cubic-bezier(0.22,1,0.36,1)] md:group-hover:scale-[1.01]"
+                />
+              </motion.div>
             </motion.div>
           </div>
           
           {/* Stacked right column */}
           <div className="lg:col-span-7 flex flex-col gap-12 lg:gap-24 lg:pt-48 mt-8 lg:mt-0 items-center lg:items-start">
-            <motion.div style={{ y: subImageY }} className="relative w-[85%] md:w-[70%] lg:w-[80%] ml-auto lg:ml-4 md:mr-auto industrial-shadow group overflow-hidden bg-off-white">
-              <motion.img 
+            <motion.div style={{ y: subImageY }} className="relative w-[85%] md:w-[70%] lg:w-[80%] ml-auto lg:ml-4 md:mr-auto group">
+              <motion.div
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true, margin: "100px" }}
                 variants={fadeUpVariant}
-                src={imgSoratowa} 
-                alt="Soratowa Tea Ad"
-                className="block bg-off-white w-full h-auto object-contain filter brightness-[0.98] transition-transform duration-[1.2s] ease-[cubic-bezier(0.22,1,0.36,1)] md:group-hover:scale-[1.01]"
-              />
+                className="w-full relative industrial-shadow overflow-hidden"
+              >
+                <img 
+                  src={imgSoratowa} 
+                  alt="Soratowa Tea Ad"
+                  className="block w-full h-auto object-contain filter brightness-[0.98] transition-transform duration-[1.2s] ease-[cubic-bezier(0.22,1,0.36,1)] md:group-hover:scale-[1.01]"
+                />
+              </motion.div>
             </motion.div>
             
-            <motion.div style={{ y: extraImageY }} className="relative w-[90%] md:w-[75%] lg:w-[50%] mr-auto lg:mr-8 md:ml-auto md:mr-0 lg:self-end industrial-shadow group mt-4 lg:mt-8 overflow-hidden z-20 bg-off-white">
-              <motion.img 
+            <motion.div style={{ y: extraImageY }} className="relative w-[90%] md:w-[75%] lg:w-[50%] mr-auto lg:mr-8 md:ml-auto md:mr-0 lg:self-end group mt-4 lg:mt-8 z-20">
+              <motion.div
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true, margin: "100px" }}
                 variants={fadeUpVariant}
-                src={imgSoundmaster} 
-                alt="SoundMaster Headphones Ad"
-                className="block bg-off-white w-full h-auto object-contain filter brightness-[0.98] transition-transform duration-[1.2s] ease-[cubic-bezier(0.22,1,0.36,1)] md:group-hover:scale-[1.01]"
-              />
+                className="w-full relative industrial-shadow overflow-hidden"
+              >
+                <img 
+                  src={imgSoundmaster} 
+                  alt="SoundMaster Headphones Ad"
+                  className="block w-full h-auto object-contain filter brightness-[0.98] transition-transform duration-[1.2s] ease-[cubic-bezier(0.22,1,0.36,1)] md:group-hover:scale-[1.01]"
+                />
+              </motion.div>
             </motion.div>
           </div>
           
